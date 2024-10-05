@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longevity Healthspan City</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        /* Hero Carousel Styling */
+        #hero-carousel {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            color: white;
+        }
+
+        .carousel-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            object-fit: cover;
+        }
+
+        .carousel-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-item.active {
+            display: block;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .overlay h1 {
+            margin: 0;
+            font-size: 3.5rem;
+        }
+
+        .overlay p {
+            font-size: 1.3rem;
+            margin: 10px 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding-bottom: 30px;
+        }
+
+        .accordion {
+            background-color: white;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .accordion h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            color: #2f80ed;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .accordion-content p {
+            margin: 10px 0;
+        }
+
+        .accordion-content a {
+            display: inline-block;
+            margin-top: 5px;
+            color: #2f80ed;
+            text-decoration: none;
+            border: 1px solid #2f80ed;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .accordion-content a:hover {
+            background-color: #2f80ed;
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2f80ed;
+            color: white;
+        }
+
+        /* Music Player Styling */
+        #music-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #play-btn {
+            cursor: pointer;
+            margin-right: 10px;
+            background: #56ccf2;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        #music-name {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+<header id="hero-carousel" class="carousel">
+    <!-- First Video in the Carousel -->
+    <div class="carousel-item active">
+        <video autoplay muted loop playsinline>
+            <source src="./videos/video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Second Video in the Carousel -->
+    <div class="carousel-item">
+        <video autoplay muted loop playsinline>
+            <source src="./videos/video2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Third Video in the Carousel (add as many as you have) -->
+    <div class="carousel-item">
+        <video autoplay muted loop playsinline>
+            <source src="./videos/video3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Fourth Video in the Carousel (optional) -->
+    <div class="carousel-item">
+        <video autoplay muted loop playsinline>
+            <source src="./videos/video4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+        <!-- Fifth Video in the Carousel (optional) -->
+    <div class="carousel-item">
+        <video autoplay muted loop playsinline>
+            <source src="./videos/video5.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="overlay">
+        <h1>Longevity Healthspan City</h1>
+        <p>Where Health, Community, and Well-being Thrive Together</p>
+    </div>
+</header>
+
+<div class="container">
+    <div class="accordion">
+        <h3>Advanced Health and Wellness</h3>
+        <div class="accordion-content">
+            <p>State-of-the-art health screening and preventive care facilities, tailored to provide personalized health services with a focus on wellness and longevity.</p>
+            <a href="advanced-health.html">Read More</a>
+        </div>
+    </div>
+
+    <div class="accordion">
+        <h3>Engaging Lifestyle Activities</h3>
+        <div class="accordion-content">
+            <p>Offering adventure sports, fitness centers, and wellness retreats that make living healthily both fun and exciting.</p>
+            <a href="engaging-lifestyle.html">Read More</a>
+        </div>
+    </div>
+
+    <div class="accordion">
+        <h3>Family-Friendly Facilities</h3>
+        <div class="accordion-content">
+            <p>Providing top-tier nurseries, schools, playgrounds, and programs that cater to families and promote a balanced lifestyle.</p>
+            <a href="family-friendly.html">Read More</a>
+        </div>
+    </div>
+
+    <div class="accordion">
+        <h3>Sustainable and Smart Living</h3>
+        <div class="accordion-content">
+            <p>Implementing eco-friendly infrastructure with renewable energy sources, smart city features, and green living spaces.</p>
+            <a href="sustainable-living.html">Read More</a>
+        </div>
+    </div>
+
+    <div class="accordion">
+        <h3>Celebrating Diversity and Culture</h3>
+        <div class="accordion-content">
+            <p>Embracing multiculturalism with global cuisine, art festivals, and programs that celebrate the city’s vibrant culture.</p>
+            <a href="diversity-culture.html">Read More</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2024 Longevity Healthspan City - Designed for a Healthier, Happier Future
+</footer>
+
+<!-- Music Controls -->
+<div id="music-controls">
+    <button id="play-btn">Play</button>
+    <span id="music-name">Background Music: Sun-Drenched Paradise</span>
+    <audio id="background-music" src="./music/background.mp3" loop></audio>
+</div>
+
+<script>
+    // Carousel functionality
+    let carouselIndex = 0;
+    const carouselItems = document.querySelectorAll('.carousel-item');
+
+    function showNextCarouselItem() {
+        carouselItems[carouselIndex].classList.remove('active');
+        carouselIndex = (carouselIndex + 1) % carouselItems.length;
+        carouselItems[carouselIndex].classList.add('active');
+    }
+
+    // Change slide every 10 seconds
+    setInterval(showNextCarouselItem, 10000);
+
+    // Accordion functionality
+    const accordions = document.querySelectorAll('.accordion');
+    accordions.forEach(accordion => {
+        accordion.addEventListener('click', function() {
+            this.classList.toggle('active');
+            const content = this.querySelector('.accordion-content');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    });
+
+    // Music Player functionality
+    const playBtn = document.getElementById('play-btn');
+    const backgroundMusic = document.getElementById('background-music');
+
+    playBtn.addEventListener('click', () => {
+        if (backgroundMusic.paused) {
+            backgroundMusic.play();
+            playBtn.textContent = 'Pause';
+        } else {
+            backgroundMusic.pause();
+            playBtn.textContent = 'Play';
+        }
+    });
+</script>
+
+</body>
+</html>
