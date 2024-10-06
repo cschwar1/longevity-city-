@@ -71,35 +71,37 @@
             padding-bottom: 30px;
         }
 
-        .accordion {
-            background-color: white;
-            margin-bottom: 15px;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
         }
 
-        .accordion h3 {
-            margin: 0;
-            font-size: 1.4rem;
+        .content-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .content-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .content-item h3 {
+            margin-top: 0;
             color: #2f80ed;
         }
 
-        .accordion-content {
-            display: none;
-            padding: 10px;
-            border-top: 1px solid #ddd;
-        }
-
-        .accordion-content p {
+        .content-item p {
             margin: 10px 0;
         }
 
-        .accordion-content a {
+        .content-item a {
             display: inline-block;
-            margin-top: 5px;
+            margin-top: 10px;
             color: #2f80ed;
             text-decoration: none;
             border: 1px solid #2f80ed;
@@ -108,7 +110,7 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        .accordion-content a:hover {
+        .content-item a:hover {
             background-color: #2f80ed;
             color: #fff;
         }
@@ -198,130 +200,85 @@
     </div>
 </header>
 
-<div class="accordion">
-    <h3>Data-Driven Urban Ecosystem</h3>
-    <div class="accordion-content">
+<div class="content-grid">
+    <div class="content-item">
+        <h3>Data-Driven Urban Ecosystem</h3>
         <p>The longevity/health-span city is envisioned as a pioneering urban ecosystem where data plays a pivotal role in enhancing the quality of life, extending the health-span of its residents, and fostering scientific growth and discoveries.</p>
         <a href="data-driven-urban-ecosystem.html">Read More</a>
     </div>
-</div>
-    <div class="accordion">
+    <div class="content-item">
         <h3>Community Engagement and Events</h3>
-        <div class="accordion-content">
-            <p>Join our vibrant community events and workshops designed to foster interaction and engagement among residents.</p>
-            <a href="community-engagement.html">Read More</a>
-        </div>
+        <p>Join our vibrant community events and workshops designed to foster interaction and engagement among residents.</p>
+        <a href="community-engagement.html">Read More</a>
     </div>
-
-    <div class="accordion">
+    <div class="content-item">
         <h3>Research and Innovation</h3>
-        <div class="accordion-content">
-            <p>Explore our ongoing research projects and technological innovations that are shaping the future of urban living.</p>
-            <a href="research-innovation.html">Read More</a>
-        </div>
+        <p>Explore our ongoing research projects and technological innovations that are shaping the future of urban living.</p>
+        <a href="research-innovation.html">Read More</a>
     </div>
-
-    <div class="accordion">
+    <div class="content-item">
         <h3>Environmental Initiatives</h3>
-        <div class="accordion-content">
-            <p>Discover our commitment to sustainability through green spaces, recycling programs, and renewable energy projects.</p>
-            <a href="environmental-initiatives.html">Read More</a>
-        </div>
+        <p>Discover our commitment to sustainability through green spaces, recycling programs, and renewable energy projects.</p>
+        <a href="environmental-initiatives.html">Read More</a>
     </div>
-
-    <div class="accordion">
+    <div class="content-item">
         <h3>Education and Learning Opportunities</h3>
-        <div class="accordion-content">
-            <p>Learn about the educational institutions and skill development programs available to our residents.</p>
-            <a href="education-learning.html">Read More</a>
-        </div>
+        <p>Learn about the educational institutions and skill development programs available to our residents.</p>
+        <a href="education-learning.html">Read More</a>
     </div>
-
-    <div class="accordion">
+    <div class="content-item">
         <h3>Safety and Security</h3>
-        <div class="accordion-content">
-            <p>Understand the measures in place to ensure the safety and security of our residents.</p>
-            <a href="safety-security.html">Read More</a>
-        </div>
+        <p>Understand the measures in place to ensure the safety and security of our residents.</p>
+        <a href="safety-security.html">Read More</a>
     </div>
-
-    <div class="accordion">
+    <div class="content-item">
         <h3>Transportation and Mobility</h3>
-        <div class="accordion-content">
-            <p>Explore the transportation options available, including public transit and bike-sharing programs.</p>
-            <a href="transportation-mobility.html">Read More</a>
-        </div>
+        <p>Explore the transportation options available, including public transit and bike-sharing programs.</p>
+        <a href="transportation-mobility.html">Read More</a>
     </div>
-
-    <div class="accordion">
+    <div class="content-item">
         <h3>Economic Opportunities</h3>
-        <div class="accordion-content">
-            <p>Discover job opportunities, business incentives, and economic growth initiatives within the city.</p>
-            <a href="economic-opportunities.html">Read More</a>
-        </div>
+        <p>Discover job opportunities, business incentives, and economic growth initiatives within the city.</p>
+        <a href="economic-opportunities.html">Read More</a>
     </div>
-
-    <div class="accordion">
+    <div class="content-item">
         <h3>Health and Wellness Programs</h3>
-        <div class="accordion-content">
-            <p>Learn about the various health and wellness programs available to our residents.</p>
-            <a href="health-wellness.html">Read More</a>
-        </div>
+        <p>Learn about the various health and wellness programs available to our residents.</p>
+        <a href="health-wellness.html">Read More</a>
     </div>
-
-    <div class="accordion">
+    <div class="content-item">
         <h3>Cultural and Recreational Activities</h3>
-        <div class="accordion-content">
-            <p>Participate in cultural events, recreational facilities, and leisure activities available to residents.</p>
-            <a href="cultural-recreational.html">Read More</a>
-        </div>
+        <p>Participate in cultural events, recreational facilities, and leisure activities available to residents.</p>
+        <a href="cultural-recreational.html">Read More</a>
     </div>
-
-    <div class="accordion">
+    <div class="content-item">
         <h3>Advanced Health and Wellness</h3>
-        <div class="accordion-content">
-            <p>State-of-the-art health screening and preventive care facilities, tailored to provide personalized health services with a focus on wellness and longevity.</p>
-            <a href="advanced-health.html">Read More</a>
-        </div>
+        <p>State-of-the-art health screening and preventive care facilities, tailored to provide personalized health services with a focus on wellness and longevity.</p>
+        <a href="advanced-health.html">Read More</a>
     </div>
-
-    <div class="accordion">
+    <div class="content-item">
         <h3>Engaging Lifestyle Activities</h3>
-        <div class="accordion-content">
-            <p>Offering adventure sports, fitness centers, and wellness retreats that make living healthily both fun and exciting.</p>
-            <a href="engaging-lifestyle.html">Read More</a>
-        </div>
+        <p>Offering adventure sports, fitness centers, and wellness retreats that make living healthily both fun and exciting.</p>
+        <a href="engaging-lifestyle.html">Read More</a>
     </div>
-
-    <div class="accordion">
+    <div class="content-item">
         <h3>Family-Friendly Facilities</h3>
-        <div class="accordion-content">
-            <p>Providing top-tier nurseries, schools, playgrounds, and programs that cater to families and promote a balanced lifestyle.</p>
-            <a href="family-friendly.html">Read More</a>
-        </div>
+        <p>Providing top-tier nurseries, schools, playgrounds, and programs that cater to families and promote a balanced lifestyle.</p>
+        <a href="family-friendly.html">Read More</a>
     </div>
-
-    <div class="accordion">
+    <div class="content-item">
         <h3>Sustainable and Smart Living</h3>
-        <div class="accordion-content">
-            <p>Implementing eco-friendly infrastructure with renewable energy sources, smart city features, and green living spaces.</p>
-            <a href="sustainable-living.html">Read More</a>
-        </div>
+        <p>Implementing eco-friendly infrastructure with renewable energy sources, smart city features, and green living spaces.</p>
+        <a href="sustainable-living.html">Read More</a>
     </div>
-
-    <div class="accordion">
+    <div class="content-item">
         <h3>Celebrating Diversity and Culture</h3>
-        <div class="accordion-content">
-            <p>Embracing multiculturalism with global cuisine, art festivals, and programs that celebrate the city’s vibrant culture.</p>
-            <a href="diversity-culture.html">Read More</a>
-        </div>
+        <p>Embracing multiculturalism with global cuisine, art festivals, and programs that celebrate the city’s vibrant culture.</p>
+        <a href="diversity-culture.html">Read More</a>
     </div>
-
-    <div class="accordion">
+    <div class="content-item">
         <h3>Network of Longevity Cities</h3>
-        <div class="accordion-content">
-            <p>Our city is the first of several longevity cities forming a network where residents can seamlessly travel between locations with minimal logistic effort. This network offers consistent services and products, allowing residents to take their data with them. It also provides opportunities for a tax-efficient lifestyle, enabling families to live together as children transition smoothly between coordinated and synchronized schools.</p>
-        </div>
+        <p>Our city is the first of several longevity cities forming a network where residents can seamlessly travel between locations with minimal logistic effort. This network offers consistent services and products, allowing residents to take their data with them. It also provides opportunities for a tax-efficient lifestyle, enabling families to live together as children transition smoothly between coordinated and synchronized schools.</p>
     </div>
 </div>
 
