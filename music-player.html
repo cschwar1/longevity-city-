@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+        }
+
+        #music-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #play-btn {
+            cursor: pointer;
+            margin-right: 10px;
+            background: #56ccf2;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        #music-name {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="music-controls">
+        <button id="play-btn">Play</button>
+        <span id="music-name">Background Music: Sun-Drenched Paradise</span>
+        <audio id="background-music" src="./music/background.mp3" loop></audio>
+        <input type="range" id="volume-control" min="0" max="1" step="0.1" value="1" aria-label="Volume Control">
+    </div>
+
+    <script>
+        const playBtn = document.getElementById('play-btn');
+        const backgroundMusic = document.getElementById('background-music');
+        const volumeControl = document.getElementById('volume-control');
+
+        playBtn.addEventListener('click', () => {
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+                playBtn.textContent = 'Pause';
+            } else {
+                backgroundMusic.pause();
+                playBtn.textContent = 'Play';
+            }
+        });
+
+        volumeControl.addEventListener('input', (e) => {
+            backgroundMusic.volume = e.target.value;
+        });
+    </script>
+</body>
+</html>
