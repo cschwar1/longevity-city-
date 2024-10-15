@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Longevity Healthspan City - A city where global health, community, and well-being thrive together. Explore our initiatives in health, sustainability, and innovation.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Longevity Healthspan City</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
@@ -154,6 +155,8 @@
 <body>
 
 <header id="hero-carousel" class="carousel">
+    <button id="prev-btn" aria-label="Previous Slide">Previous</button>
+    <button id="next-btn" aria-label="Next Slide">Next</button>
     <!-- First Video in the Carousel -->
     <div class="carousel-item active">
         <video autoplay muted loop playsinline>
@@ -203,7 +206,7 @@
 <div class="content-grid">
     <div class="content-item">
         <a href="data-driven-urban-ecosystem.html">
-            <img src="images/data-driven.webp" alt="Data-Driven Urban Ecosystem" style="width:100%; height:auto; aspect-ratio: 1/1; object-fit:cover; border-radius:8px; margin-bottom:10px;">
+            <img src="images/data-driven.webp" alt="Data-Driven Urban Ecosystem" loading="lazy" style="width:100%; height:auto; aspect-ratio: 1/1; object-fit:cover; border-radius:8px; margin-bottom:10px;">
             <h3>Data-Driven Urban Ecosystem</h3>
         </a>
         <p>Our city is a beacon of innovation and inclusivity, where data empowers a vibrant community to live longer, healthier lives, and fosters groundbreaking discoveries.</p>
@@ -323,6 +326,8 @@
     </div>
 </div>
 
+<button id="scroll-to-top" aria-label="Scroll to top">Top</button>
+
 <footer>
     &copy; 2024 Longevity Healthspan City - Designed for a Healthier, Happier Future
 </footer>
@@ -332,9 +337,10 @@
     <button id="play-btn">Play</button>
     <span id="music-name">Background Music: Sun-Drenched Paradise</span>
     <audio id="background-music" src="./music/background.mp3" loop></audio>
+    <input type="range" id="volume-control" min="0" max="1" step="0.1" value="1" aria-label="Volume Control">
 </div>
 
-<script>
+<script defer>
     // Carousel functionality
     let carouselIndex = 0;
     const carouselItems = document.querySelectorAll('.carousel-item');
@@ -344,6 +350,28 @@
         carouselIndex = (carouselIndex + 1) % carouselItems.length;
         carouselItems[carouselIndex].classList.add('active');
     }
+
+    // Carousel navigation controls
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    prevBtn.addEventListener('click', () => {
+        carouselItems[carouselIndex].classList.remove('active');
+        carouselIndex = (carouselIndex - 1 + carouselItems.length) % carouselItems.length;
+        carouselItems[carouselIndex].classList.add('active');
+    });
+
+    // Volume control functionality
+    const volumeControl = document.getElementById('volume-control');
+    volumeControl.addEventListener('input', (e) => {
+        backgroundMusic.volume = e.target.value;
+    });
+
+    nextBtn.addEventListener('click', () => {
+        carouselItems[carouselIndex].classList.remove('active');
+        carouselIndex = (carouselIndex + 1) % carouselItems.length;
+        carouselItems[carouselIndex].classList.add('active');
+    });
 
     // Change slide every 10 seconds
     setInterval(showNextCarouselItem, 10000);
@@ -360,6 +388,12 @@
                 content.style.display = "block";
             }
         });
+    });
+
+    // Scroll to top functionality
+    const scrollToTopBtn = document.getElementById('scroll-to-top');
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     // Music Player functionality
